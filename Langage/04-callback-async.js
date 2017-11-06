@@ -1,9 +1,10 @@
 
 setTimeout(function() {
   console.log('Hello');
-  setTimeout(function() {
-    console.log('Bye');
-  }, 1000);
+}, 1000);
+
+setTimeout(function() {
+  console.log('Bye');
 }, 1000);
 
 const nbs = [2, 3, 4];
