@@ -25,11 +25,14 @@ del(distAbsPath)
 
     await fs.mkdir(distAbsPath);
 
-    const file1 = await fs.readFile(file1AbsPath);
-    await fs.appendFile(bundleAbsPath, file1);
+    const files = await Promise.all([
+      fs.readFile(file1AbsPath),
+      fs.readFile(file2AbsPath),
+    ]);
 
-    const file2 = await fs.readFile(file2AbsPath);
-    await fs.appendFile(bundleAbsPath, file2);
+    files.forEach(async f => {
+      await fs.appendFile(bundleAbsPath, f);
+    });
 
     console.log('Build done');
   } catch (err) {
