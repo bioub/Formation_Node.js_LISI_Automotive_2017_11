@@ -7,7 +7,7 @@ const Random = {
   get() {
     return Math.random();
   },
-  getArbitrary(min, max) {
+  getArbitrary(min = 0, max = 100) {
     return Math.random() * (max - min) + min;
   },
   getInt(min, max) {
@@ -70,7 +70,9 @@ class Jeu {
   }
 }
 
-const jeu = new Jeu();
+const jeu = new Jeu({
+  max: 10,
+});
 jeu.jouer();
 
 // 3 - Permettre de paramétrer la class avec un objet

@@ -16,6 +16,7 @@ for (var i=0; i<3; i++) {
     console.log(i);
   }, 0);
 }
+console.log(i); // undefined
 // Dans 0 sec 3 3 3
 
 
@@ -35,3 +36,6 @@ function createButton(value) {
   });
 }
 */
+
+
+

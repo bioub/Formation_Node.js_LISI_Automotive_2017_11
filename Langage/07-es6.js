@@ -53,9 +53,14 @@ const cloneObj = {...coords3d}; // clone le premier niveau
 
 // Destructurer
 // const cinq = nbs[4];
-const [un, deux, trois] = autres;
+const [un, deux, trois, , , , , , neuf = 9] = autres;
 const {x: maVarX, y: y, z = 10} = coords2d;
 
 const autresCoords = {
   x: maVarX, y, z // x: x, y: y, z: z // shorthand prop
 };
+
+// for ... of pour boucle sur un iterable (tableau, string, arguments, map...)
+for (let nb of nbs) {
+  console.log(nb);
+}

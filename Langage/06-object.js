@@ -41,6 +41,9 @@ if (false) {
 }
 
 console.log(coords2d.x); // 10
+console.log(coords2d['x']); // 10
+const prop = 'y';
+console.log(coords2d[prop]);
 
 // constructor function
 
@@ -48,6 +51,9 @@ const Contact = function(prenom) {
   if (prenom) {
     this.prenom = prenom;
   }
+  /*
+  this.hello = function() {};
+  */
 };
 
 Contact.prototype.hello = function() {
@@ -62,10 +68,24 @@ const romain = new Contact('Romain');
 console.log(typeof romain); // object
 console.log(romain.prenom); // Romain
 console.log(romain.hello()); // Bonjour je suis Romain
-console.log(romain.hasOwnProperty('romain')); // true
+console.log(romain.hasOwnProperty('prenom')); // true
 console.log(romain.hasOwnProperty('hello')); // false
 
 console.log(anonymous.hello === romain.hello); // false
+
+for (var key in romain) {
+  if (romain.hasOwnProperty(key)) {
+      console.log("C'est bien la propriété (" +
+      key +
+                   "), sa valeur : " + romain[key]
+                  );
+  }
+  else {
+      console.log(key);
+      // toString ou autre
+  }
+}
+
 
 
 // ES6, sucre syntaxique (syntaxe simplifiée)

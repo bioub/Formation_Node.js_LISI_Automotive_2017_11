@@ -1,5 +1,3 @@
-// @ts-check
-
 /**
  * Additionne 2 paramètres
  * @param {number} a Le 1er nombre

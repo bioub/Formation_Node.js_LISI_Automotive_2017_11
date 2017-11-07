@@ -1,10 +1,7 @@
 const nbs = [2, 3, 4];
 
-nbs
-  .filter(function(nb, i) {
-    return nb > 2;
-  })
-  .forEach(function(nb, i) {
+nbs.filter(nb => nb > 2)
+  .forEach((nb, i) => {
     console.log(nb, i);
   });
 
