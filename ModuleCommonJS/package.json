@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "chalk": "^2.3.0"
+  },
+  "scripts": {
+    "jeu": "node exercice",
+    "test": "node launch-test.js",
+    "jeu:es6": "node --experimental-modules exercice-module-es6/index.mjs"
+  }
+}

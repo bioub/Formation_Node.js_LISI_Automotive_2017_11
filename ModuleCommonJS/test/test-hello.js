@@ -1,11 +1,12 @@
 const assert = require('assert');
+const chalk = require('chalk');
 const hello = require('../src/hello');
 
 try {
   assert.deepEqual(hello('Romain'), 'Bonjour Romain');
-  console.log('Tests hello ok');
+  console.log(chalk.green('Tests hello ok'));
 }
 catch(err) {
-  console.error('Problème avec hello');
+  console.error(chalk.red('Problème avec hello'));
   process.exit(1);
 }
