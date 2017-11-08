@@ -29,8 +29,8 @@ del(distAbsPath)
       fs.readFile(file2AbsPath),
     ]);
 
-    files.forEach(async f => {
-      await fs.appendFile(bundleAbsPath, f);
+    files.forEach(async buffer => {
+      await fs.appendFile(bundleAbsPath, buffer);
     });
 
     console.log('Build done');
