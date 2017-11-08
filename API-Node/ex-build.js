@@ -22,7 +22,6 @@ del(distAbsPath)
 (async function () {
   try {
     await del(distAbsPath);
-
     await fs.mkdir(distAbsPath);
 
     const files = await Promise.all([

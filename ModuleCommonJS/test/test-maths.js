@@ -2,14 +2,15 @@
 // Automatique dans Node.js
 // (function (exports, require, module, __filename, __dirname) {
 const assert = require('assert');
+const chalk = require('chalk');
 const maths = require('../src/maths'); // === exports
 
 try {
   assert.deepEqual(maths.sum(1, 1), 3);
-  console.log('Tests sum ok');
+  console.log(chalk.green('Tests sum ok'));
 }
 catch(err) {
-  console.error('Problème avec sum');
+  console.error(chalk.red('Problème avec sum'));
   process.exit(1);
 }
 // });

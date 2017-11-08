@@ -21,7 +21,7 @@ const mkdir = util.promisify(fs.mkdir);
 console.time('DONE');
 console.time('THREAD DISPO');
 stat('logs')
-  .catch(() => mkdir('logs'))
+  .catch((err) => mkdir('logs'))
   .then(() => log('logs/app.log', 'Ligne 1'))
   .then(() => log('logs/app.log', 'Ligne 2'))
   .then(() => log('logs/app.log', 'Ligne 3'))
