@@ -3,7 +3,7 @@ const net = require('net');
 const server = net.createServer();
 
 server.on('listening', () => {
-  console.log('listening');
+  console.log('server started');
 });
 
 server.on('connection', (socket) => {

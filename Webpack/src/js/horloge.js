@@ -1,4 +1,3 @@
-
 export class Horloge {
   constructor(options = {}) {
     const { container } = options;

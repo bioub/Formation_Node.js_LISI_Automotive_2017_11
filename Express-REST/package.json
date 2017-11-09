@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "mongoose": "^4.13.1"
+  },
+  "scripts": {
+    "start": "node .",
+    "start:dev": "nodemon ."
   }
 }
