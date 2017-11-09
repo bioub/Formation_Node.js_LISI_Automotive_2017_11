@@ -5,6 +5,15 @@ exports.list = async (req, res, next) => {
   res.json(contacts);
 };
 
+exports.add = async (req, res, next) => {
+  try {
+    const contact = await model.create(req.body);
+    res.json(contact);
+  } catch (err) {
+    next(err);
+  }
+};
+
 exports.show = async (req, res, next) => {
   const contact = await model.getById(req.params.id);
   
