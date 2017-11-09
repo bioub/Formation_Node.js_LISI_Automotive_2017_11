@@ -15,20 +15,25 @@ exports.add = async (req, res, next) => {
 };
 
 exports.show = async (req, res, next) => {
-  const contact = await model.getById(req.params.id);
-  
-  if (!contact) {
-    req.errorMsg = 'Contact not found';
-    // next(err); // error500
-    return next(); // error404
-  }
+  try {
+    const contact = await model.getById(req.params.id);
 
-  res.json(contact);
+    if (!contact) {
+      req.errorMsg = 'Contact not found';
+      // next(err); // error500
+      return next(); // error404
+    }
+
+    res.json(contact);
+  }
+  catch (err) {
+    next(err);
+  }
 };
 
 exports.delete = async (req, res, next) => {
   const contact = await model.remove(req.params.id);
-  
+
   if (!contact) {
     req.errorMsg = 'Contact not found';
     return next();

@@ -21,3 +21,4 @@ exports.getList = () => Contact.find();
 exports.getById = (id) => Contact.findById(id);
 exports.remove = (id) => Contact.findByIdAndRemove(id);
 exports.create = (doc) => Contact.create(doc);
+exports.Contact = Contact;
